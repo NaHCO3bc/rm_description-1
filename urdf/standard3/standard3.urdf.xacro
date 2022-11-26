@@ -13,6 +13,12 @@
     <xacro:if value="$(arg load_chassis)">
         <xacro:include filename="$(find rm_description)/urdf/standard/chassis.urdf.xacro"/>
         <xacro:chassis roller_type="$(arg roller_type)"/>
+        <xacro:include filename="$(find rm_description)/urdf/common/lidar2d.urdf.xacro"/>
+        <xacro:lidar2d connected_to="base_link" lidar_name="lidar2d" simulation="true" xyz="0.2 0 -0.07"
+                       rpy="0 0 3.1416"/>
+        <xacro:include filename="$(find rm_description)/urdf/common/realsense_l515.urdf.xacro"/>
+        <xacro:realsense_l515 connected_to="yaw" realsense_name="realsense_camera" simulation="true" xyz='0 0 0.5'
+                              rpy='0 0 0'/>
 
         <xacro:if value="$(arg load_gimbal)">
             <xacro:include filename="$(find rm_description)/urdf/standard/gimbal.urdf.xacro"/>
