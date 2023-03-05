@@ -36,13 +36,6 @@
         <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="supply_frame"/>
-    <joint name="supply_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="0 0 ${pi/3}"/>
-        <parent link="yaw"/>
-        <child link="supply_frame"/>
-    </joint>
-
     <link name="pitch">
         <inertial>
             <mass value="1.287539"/>
